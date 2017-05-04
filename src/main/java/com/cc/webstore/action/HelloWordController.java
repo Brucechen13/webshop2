@@ -1,5 +1,6 @@
 package com.cc.webstore.action;
 
+import com.cc.webstore.beans.Product;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -12,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloWordController implements Controller{
     @Override
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        ModelAndView mv = new ModelAndView("test");
+        ModelAndView mv = new ModelAndView("index");
+        Product product = new Product();
+        product.setProductName("耳机");
+        product.setImageUrl("http://www.baidu.com");
+        mv.addObject("product", product);
         return mv;
     }
 }
