@@ -5,7 +5,7 @@
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 
-    <!-- Freemarker配置 -->
+    <!-- Freemarker配置
     <bean id="freemarkerConfig"
           class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/templates/" />
@@ -18,6 +18,6 @@
                 <prop key="template_exception_handler">ignore</prop>
             </props>
         </property>
-    </bean>
+    </bean> -->
 
 </beans>
