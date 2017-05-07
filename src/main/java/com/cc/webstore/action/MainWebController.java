@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by chenc on 2017/5/5.
  */
-@Component
+@Component("MainAction")
 public class MainWebController implements Controller{
     @Override
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {

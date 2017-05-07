@@ -10,28 +10,28 @@
       http://www.springframework.org/schema/context/spring-context.xsd
       http://www.springframework.org/schema/mvc
       http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+    <!--
+            <mvc:resources mapping="/static/**" location="/static/" />
 
-    <mvc:resources mapping="/static/**" location="/static/" />
+                视图解释器
+            <bean id="viewResolver"
+                  class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+                <property name="suffix">
+                    <value>.ftl</value>
+                </property>
+                <property name="contentType" value="text/html;charset=UTF-8"></property>
+            </bean>-->
 
-    <!--视图解释器 -->
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
-        <property name="suffix">
-            <value>.ftl</value>
-        </property>
-        <property name="contentType" value="text/html;charset=UTF-8"></property>
-    </bean>
-
-    <!-- 地址转发器 -->
+    <!-- 地址转发器
     <bean name="HelloAction" class="com.cc.webstore.action.HelloWordController" />
     <bean id="urlMapping"
           class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
-            <props>
-                <!-- 映射URL地址 -->
-                <prop key="/world">HelloAction</prop>
+            <props>-->
+                <!-- 映射URL地址
+                <prop key="/hello">HelloAction</prop>
             </props>
         </property>
-    </bean>
+    </bean>-->
 
 </beans>
