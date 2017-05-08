@@ -1,11 +1,17 @@
 package com.cc.webstore.config;
 
 import com.cc.webstore.action.MainWebController;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 
+import javax.sql.DataSource;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
@@ -26,5 +32,20 @@ public class RootConfig {
         prop.setProperty("default_encoding", "UTF-8");
         freemarkerConfig.setFreemarkerSettings(prop);
         return freemarkerConfig;
+    }
+
+    @Bean
+    public MultipartResolver multipartResolver() throws IOException{
+        return new StandardServletMultipartResolver();
+    }
+
+    @Bean
+    public  DataSource dataSource(){
+        DriverManagerDataSource ds = new DriverManagerDataSource();
+        ds.setDriverClassName("org.h2.Driver");
+        ds.setUrl("jdbc:h2:tcp://127.0.0.1:3306/test");
+        ds.setUsername("root");
+        ds.setPassword("123456");
+        return ds;
     }
 }

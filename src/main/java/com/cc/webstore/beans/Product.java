@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class Product implements Serializable{
 
+    private String id;
+
     private String imageUrl;
     private String productName;
     private float originPrice;
@@ -15,6 +17,14 @@ public class Product implements Serializable{
     private String intro;
     private String country;
     private String type;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getProductName() {
         return productName;
