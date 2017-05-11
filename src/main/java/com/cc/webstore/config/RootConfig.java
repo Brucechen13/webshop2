@@ -19,7 +19,7 @@ import java.util.Properties;
  * Created by chenc on 2017/5/7.
  */
 @Configuration
-@ComponentScan(basePackageClasses = {MainWebController.class})
+@ComponentScan(basePackages = "com.cc.webstore")
 public class RootConfig {
     @Bean
     public FreeMarkerConfigurer freemarkerConfig(){
@@ -44,7 +44,7 @@ public class RootConfig {
     public  DataSource dataSource(){
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/test");
+        ds.setUrl("jdbc:mysql://localhost:3306/webshop");
         ds.setUsername("root");
         ds.setPassword("123456");
         return ds;

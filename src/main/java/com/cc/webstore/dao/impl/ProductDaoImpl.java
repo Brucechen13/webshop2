@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by chenc on 2017/5/10.
  */
-@Repository
+@Repository("productDao")
 public class ProductDaoImpl extends JdbcBaseDaoImpl<Product> {
 }

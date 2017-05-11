@@ -4,6 +4,7 @@ import com.cc.webstore.beans.Product;
 import com.cc.webstore.dao.impl.JdbcBaseDaoImpl;
 import com.cc.webstore.dao.impl.ProductDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +29,7 @@ public class MainWebController implements Controller{
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         ModelAndView mv = new ModelAndView("index");
         mv.addObject("products", productDao.findAll());
+        System.out.println(productDao.findAll().size());
         return mv;
     }
 }

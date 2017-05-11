@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
  * Created by chenc on 2017/5/5.
  */
 @Configuration
-@ComponentScan(basePackageClasses = {MainWebController.class, ProductDaoImpl.class})
+@ComponentScan(basePackages = "com.cc.webstore")
 @EnableWebMvc
 public class WebStoreConfig extends WebMvcConfigurerAdapter{
 
